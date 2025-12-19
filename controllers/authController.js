@@ -40,11 +40,13 @@ export const signup = async (req, res, next) => {
 
     res.status(201).json({
       user: {
-        id: user._id,
+        _id: user._id,
         username: user.username,
         email: user.email,
         avatar: user.avatar,
         bio: user.bio,
+        followers: user.followers?.length || 0,
+        following: user.following?.length || 0,
       },
       token,
     });
@@ -77,11 +79,13 @@ export const login = async (req, res, next) => {
 
     res.json({
       user: {
-        id: user._id,
+        _id: user._id,
         username: user.username,
         email: user.email,
         avatar: user.avatar,
         bio: user.bio,
+        followers: user.followers?.length || 0,
+        following: user.following?.length || 0,
       },
       token,
     });

@@ -29,4 +29,5 @@ const authMiddleware = async (req, res, next) => {
   }
 };
 
+export const protect = authMiddleware;
 export default authMiddleware;
