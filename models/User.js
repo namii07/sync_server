@@ -115,7 +115,6 @@ userSchema.virtual("followingCount").get(function () {
 });
 
 /* ================= INDEXES ================= */
-userSchema.index({ username: 1 });
-userSchema.index({ email: 1 });
+// Indexes are already created by unique: true in schema
 
 export default mongoose.model("User", userSchema);
